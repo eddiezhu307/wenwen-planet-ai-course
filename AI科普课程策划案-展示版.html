@@ -1,0 +1,481 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AI 小创客：16 个生活场景里的人工智能课</title>
+  <style>
+    :root {
+      --ink: #1d2a2e;
+      --muted: #5d6f76;
+      --line: #dce6e8;
+      --paper: #fbfcf8;
+      --mint: #dff4ec;
+      --sky: #d9eef8;
+      --coral: #ffb28f;
+      --gold: #f6d77b;
+      --green: #2f8f78;
+      --blue: #2477a8;
+      --orange: #d86632;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      background: var(--paper);
+      color: var(--ink);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif;
+      line-height: 1.65;
+    }
+
+    header {
+      min-height: 88vh;
+      display: grid;
+      align-items: center;
+      background:
+        linear-gradient(120deg, rgba(223, 244, 236, 0.95), rgba(217, 238, 248, 0.82)),
+        linear-gradient(160deg, #fdf8ea, #eff9f7);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .wrap {
+      width: min(1120px, calc(100% - 40px));
+      margin: 0 auto;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.05fr) minmax(320px, 0.95fr);
+      gap: 48px;
+      align-items: center;
+      padding: 72px 0 44px;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      color: var(--green);
+      font-weight: 700;
+      letter-spacing: 0;
+      margin-bottom: 18px;
+    }
+
+    .dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: var(--orange);
+      display: inline-block;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(42px, 7vw, 82px);
+      line-height: 1.04;
+      letter-spacing: 0;
+    }
+
+    .subtitle {
+      max-width: 740px;
+      margin: 22px 0 0;
+      font-size: 21px;
+      color: var(--muted);
+    }
+
+    .hero-panel {
+      border: 1px solid rgba(36, 119, 168, 0.18);
+      background: rgba(255, 255, 255, 0.72);
+      border-radius: 8px;
+      padding: 28px;
+      box-shadow: 0 18px 40px rgba(29, 42, 46, 0.08);
+    }
+
+    .hero-panel h2 {
+      margin: 0 0 16px;
+      font-size: 24px;
+    }
+
+    .hero-panel ul {
+      padding-left: 20px;
+      margin: 0;
+      color: var(--muted);
+    }
+
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 14px;
+      padding-bottom: 36px;
+    }
+
+    .stat {
+      padding: 18px;
+      border: 1px solid var(--line);
+      background: rgba(255, 255, 255, 0.66);
+      border-radius: 8px;
+    }
+
+    .stat strong {
+      display: block;
+      font-size: 28px;
+      color: var(--blue);
+      line-height: 1.1;
+    }
+
+    .stat span {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    section {
+      padding: 62px 0;
+      border-bottom: 1px solid var(--line);
+    }
+
+    h2 {
+      margin: 0 0 18px;
+      font-size: 34px;
+      line-height: 1.18;
+      letter-spacing: 0;
+    }
+
+    h3 {
+      margin: 0 0 12px;
+      font-size: 22px;
+      letter-spacing: 0;
+    }
+
+    .lead {
+      max-width: 820px;
+      margin: 0 0 28px;
+      color: var(--muted);
+      font-size: 18px;
+    }
+
+    .pillars {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+    }
+
+    .pillar {
+      border: 1px solid var(--line);
+      background: #fff;
+      border-radius: 8px;
+      padding: 22px;
+      min-height: 220px;
+    }
+
+    .pillar:nth-child(1) { border-top: 6px solid var(--green); }
+    .pillar:nth-child(2) { border-top: 6px solid var(--blue); }
+    .pillar:nth-child(3) { border-top: 6px solid var(--orange); }
+    .pillar:nth-child(4) { border-top: 6px solid #92752b; }
+
+    .pillar p {
+      margin: 0;
+      color: var(--muted);
+    }
+
+    .lesson-table {
+      width: 100%;
+      border-collapse: collapse;
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      overflow: hidden;
+      display: table;
+    }
+
+    th,
+    td {
+      padding: 14px 16px;
+      border-bottom: 1px solid var(--line);
+      vertical-align: top;
+      text-align: left;
+    }
+
+    th {
+      background: #edf7f5;
+      color: #244a47;
+      font-size: 14px;
+    }
+
+    tr:last-child td {
+      border-bottom: 0;
+    }
+
+    td:first-child {
+      width: 64px;
+      color: var(--blue);
+      font-weight: 800;
+    }
+
+    .module-label {
+      font-weight: 800;
+      color: var(--orange);
+      white-space: nowrap;
+    }
+
+    .flow {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 12px;
+      margin-top: 26px;
+    }
+
+    .flow div {
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 18px;
+      min-height: 128px;
+    }
+
+    .flow strong {
+      color: var(--green);
+      display: block;
+      margin-bottom: 6px;
+    }
+
+    .two-col {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 28px;
+      align-items: start;
+    }
+
+    .box {
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 24px;
+    }
+
+    .box ul {
+      margin: 0;
+      padding-left: 20px;
+      color: var(--muted);
+    }
+
+    .quote {
+      background: #1f3538;
+      color: #f7fbfa;
+      padding: 44px;
+      border-radius: 8px;
+      font-size: 24px;
+      line-height: 1.45;
+    }
+
+    .quote small {
+      display: block;
+      margin-top: 18px;
+      color: #c3dbd7;
+      font-size: 16px;
+    }
+
+    footer {
+      padding: 38px 0;
+      color: var(--muted);
+    }
+
+    @media (max-width: 900px) {
+      .hero-grid,
+      .two-col,
+      .pillars,
+      .flow,
+      .stats {
+        grid-template-columns: 1fr;
+      }
+
+      header {
+        min-height: auto;
+      }
+
+      .hero-grid {
+        padding-top: 48px;
+      }
+
+      .lesson-table {
+        display: block;
+        overflow-x: auto;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="wrap">
+      <div class="hero-grid">
+        <div>
+          <div class="eyebrow"><span class="dot"></span>9-16 岁青少年 AI 科普与创作课程</div>
+          <h1>AI 小创客：16 个生活场景里的人工智能课</h1>
+          <p class="subtitle">从作业求助、英语陪练、作文表达，到校园海报、定制歌曲、项目路演，让孩子学会提问、判断、创作与负责。</p>
+        </div>
+        <div class="hero-panel">
+          <h2>课程不是教孩子“抄答案”</h2>
+          <ul>
+            <li>把 AI 当作学习伙伴，而不是答案机器。</li>
+            <li>每节课都产出一个可展示作品。</li>
+            <li>同步训练信息判断、隐私保护和版权意识。</li>
+            <li>结课完成校园 AI 创意项目路演。</li>
+          </ul>
+        </div>
+      </div>
+      <div class="stats">
+        <div class="stat"><strong>16</strong><span>节项目式课程</span></div>
+        <div class="stat"><strong>4</strong><span>大能力模块</span></div>
+        <div class="stat"><strong>90</strong><span>分钟推荐课时</span></div>
+        <div class="stat"><strong>1</strong><span>套个人 AI 作品包</span></div>
+      </div>
+    </div>
+  </header>
+
+  <section>
+    <div class="wrap">
+      <h2>课程定位</h2>
+      <p class="lead">这是一门面向真实生活的 AI 素养课。孩子不需要先学复杂编程，而是从每天都会遇到的问题出发，理解 AI 能做什么、不能做什么，以及如何把 AI 用得聪明、诚实、有创造力。</p>
+      <div class="pillars">
+        <div class="pillar">
+          <h3>会提问</h3>
+          <p>掌握“角色、任务、背景、格式、标准”的提示词结构，把模糊需求变成清晰任务。</p>
+        </div>
+        <div class="pillar">
+          <h3>会判断</h3>
+          <p>理解 AI 幻觉和信息来源，学会核查事实、比较答案、发现不合理之处。</p>
+        </div>
+        <div class="pillar">
+          <h3>会创作</h3>
+          <p>用 AI 辅助完成写作、演讲、海报、歌曲、漫画分镜和校园项目表达。</p>
+        </div>
+        <div class="pillar">
+          <h3>会负责</h3>
+          <p>遵守隐私、版权、署名和学术诚信规则，说清楚 AI 与个人贡献的分工。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <h2>16 课主题总表</h2>
+      <p class="lead">课程以“一个学生的一天”为叙事线索：学习卡住、表达困难、创作任务、校园问题，逐步推进到结课路演。</p>
+      <table class="lesson-table">
+        <thead>
+          <tr>
+            <th>课次</th>
+            <th>模块</th>
+            <th>课程主题</th>
+            <th>真实场景</th>
+            <th>AI 科普点</th>
+            <th>学生作品</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>1</td><td class="module-label">认识 AI</td><td>我的 AI 同桌：AI 到底是什么？</td><td>第一次打开 AI 工具，不知道怎么问</td><td>生成式 AI、数据、模式预测</td><td>AI 使用说明书</td></tr>
+          <tr><td>2</td><td class="module-label">学习伙伴</td><td>作业卡住了怎么办？</td><td>数学题、科学题、阅读题不会做</td><td>分步推理、提示词约束</td><td>不会做题求助卡</td></tr>
+          <tr><td>3</td><td class="module-label">学习伙伴</td><td>英语不会说怎么办？</td><td>单词记不住，口语不敢开口</td><td>语言模型、语境、角色扮演</td><td>英语情景对话</td></tr>
+          <tr><td>4</td><td class="module-label">学习伙伴</td><td>复习总是乱怎么办？</td><td>考前知识点太多，不会安排</td><td>知识结构化、错题归因</td><td>复习闯关地图</td></tr>
+          <tr><td>5</td><td class="module-label">表达力</td><td>作文没灵感怎么办？</td><td>不知道写什么，开头很难</td><td>头脑风暴、故事结构</td><td>故事大纲或作文草稿</td></tr>
+          <tr><td>6</td><td class="module-label">表达力</td><td>上台演讲紧张怎么办？</td><td>班会发言、竞选、作品展示</td><td>受众意识、模拟问答</td><td>演讲稿和答辩卡</td></tr>
+          <tr><td>7</td><td class="module-label">判断力</td><td>网上信息是真的吗？</td><td>短视频、截图、新闻真假难辨</td><td>AI 幻觉、事实核查</td><td>信息真假侦探报告</td></tr>
+          <tr><td>8</td><td class="module-label">表达力</td><td>我也能做校园小记者</td><td>采访老师、同学或社团成员</td><td>提纲生成、摘要、标题优化</td><td>采访稿或播客脚本</td></tr>
+          <tr><td>9</td><td class="module-label">多媒体</td><td>给班级做一张定制海报</td><td>运动会、社团招新、读书节宣传</td><td>图像生成、版式层级</td><td>活动海报</td></tr>
+          <tr><td>10</td><td class="module-label">多媒体</td><td>为校园定制一首歌</td><td>校庆、毕业季、运动会</td><td>歌词结构、音乐风格、版权</td><td>校园主题歌方案</td></tr>
+          <tr><td>11</td><td class="module-label">多媒体</td><td>把知识变成漫画或短视频</td><td>科学知识很抽象，想讲给别人听</td><td>分镜、镜头语言</td><td>漫画或短视频分镜</td></tr>
+          <tr><td>12</td><td class="module-label">多媒体</td><td>设计我的 AI 学习伙伴</td><td>想要一个提醒和陪练的虚拟角色</td><td>角色设定、语气一致性</td><td>AI 学习伙伴角色卡</td></tr>
+          <tr><td>13</td><td class="module-label">项目制</td><td>用 AI 解决一个校园小问题</td><td>排队、节水、垃圾分类、书包整理</td><td>问题定义、方案评估</td><td>校园问题解决方案</td></tr>
+          <tr><td>14</td><td class="module-label">项目制</td><td>数据会说话</td><td>班级小调查，不知道怎么分析</td><td>数据采集、图表、结论边界</td><td>调查图表与解读页</td></tr>
+          <tr><td>15</td><td class="module-label">展示</td><td>AI 作品展策展课</td><td>作品很多，不知道怎么包装展示</td><td>策展逻辑、作品说明</td><td>个人作品展板</td></tr>
+          <tr><td>16</td><td class="module-label">展示</td><td>毕业项目路演：校园 AI 创意节</td><td>向老师、同学、家长展示成果</td><td>项目表达、复盘、责任声明</td><td>3 分钟项目路演</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <h2>每节课怎么上</h2>
+      <p class="lead">课堂节奏强调“先理解，再操作，再修改，再表达”。AI 的结果不是终点，孩子的判断和迭代才是学习发生的地方。</p>
+      <div class="flow">
+        <div><strong>10 分钟</strong>场景故事导入：从作业、英语、海报、歌曲等真实任务切入。</div>
+        <div><strong>15 分钟</strong>AI 原理小实验：用猜句子、分类、角色扮演解释概念。</div>
+        <div><strong>30 分钟</strong>工具工作坊：老师示范提示词，学生跟做。</div>
+        <div><strong>25 分钟</strong>作品迭代：至少改 2 轮，形成可展示作品。</div>
+        <div><strong>10 分钟</strong>分享与安全提示：展示、互评、明确边界。</div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap two-col">
+      <div class="box">
+        <h2>年龄分层</h2>
+        <h3>9-12 岁</h3>
+        <ul>
+          <li>更多故事化、游戏化、模板化。</li>
+          <li>重在体验 AI 的能力边界。</li>
+          <li>作品以海报、故事、对话、角色卡为主。</li>
+        </ul>
+        <h3 style="margin-top:24px;">13-16 岁</h3>
+        <ul>
+          <li>增加事实核查、数据分析、项目路演。</li>
+          <li>要求解释提示词策略和修改过程。</li>
+          <li>作品以调研报告、方案页、分镜和路演为主。</li>
+        </ul>
+      </div>
+      <div class="box">
+        <h2>AI 安全规则</h2>
+        <ul>
+          <li>不输入真实姓名、电话、住址、学校详细信息和私人照片。</li>
+          <li>不把 AI 输出当作唯一真相，要核查来源。</li>
+          <li>不直接复制 AI 答案提交作业。</li>
+          <li>使用 AI 辅助作品时，能说明自己修改和判断的部分。</li>
+          <li>音乐、图片和文字作品要注意版权与使用范围。</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <div class="quote">
+        孩子真正需要掌握的不是某一个 AI 工具按钮，而是一个完整闭环：我遇到真实问题，我把问题说清楚，我请 AI 给出帮助，我检查和修改，我做出自己的作品，我说明 AI 与我的分工。
+        <small>课程编导核心判断</small>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <h2>结课成果</h2>
+      <p class="lead">每位学生最终形成一套个人 AI 作品包，并完成一次面向同学、老师或家长的校园 AI 创意项目路演。</p>
+      <div class="pillars">
+        <div class="pillar">
+          <h3>学习类</h3>
+          <p>作业求助卡、英语对话、复习闯关地图。</p>
+        </div>
+        <div class="pillar">
+          <h3>表达类</h3>
+          <p>作文大纲、演讲稿、采访稿、信息核查报告。</p>
+        </div>
+        <div class="pillar">
+          <h3>创作类</h3>
+          <p>活动海报、校园歌曲、漫画分镜、AI 角色卡。</p>
+        </div>
+        <div class="pillar">
+          <h3>项目类</h3>
+          <p>校园问题解决方案、调查图表、作品展板、路演稿。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="wrap">《AI 小创客：16 个生活场景里的人工智能课》课程策划展示版</div>
+  </footer>
+</body>
+</html>

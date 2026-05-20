@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>问问星球互动课堂</title>
+  <meta name="description" content="问问星球 AI 家庭成长课的独立课堂页面，包含交互 PPT、课堂小游戏、Prompt 模板和家庭任务。">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="styles.css?v=wenwen-bright-20260520">
+  <link rel="stylesheet" href="wenwen-bright.css?v=20260520f">
+</head>
+<body data-page="course">
+  <a class="skip-link" href="#main">跳到课堂内容</a>
+
+  <header class="site-header">
+    <nav class="topbar" aria-label="课堂导航">
+      <a class="brand" href="index.html" aria-label="返回问问星球首页">
+        <span class="brand-mark image-mark" aria-hidden="true"><img src="assets/wenwen-planet-avatar.jpg" alt=""></span>
+        <span>
+          <strong>问问星球</strong>
+          <small>互动课堂</small>
+        </span>
+      </a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="siteNav">
+        <span aria-hidden="true">☰</span>
+        <span class="sr-only">打开导航</span>
+      </button>
+      <div class="site-nav" id="siteNav">
+        <a href="index.html">课程首页</a>
+        <a href="index.html#map">课程地图</a>
+        <a href="#lessonList">选择课程</a>
+        <a href="#classroom">当前课堂</a>
+      </div>
+    </nav>
+  </header>
+
+  <main id="main" class="course-main">
+    <section class="course-cover" aria-labelledby="coursePageTitle">
+      <div class="section-inner course-cover-grid">
+        <div>
+          <p class="section-kicker">问问星球 · 独立课堂</p>
+          <h1 id="coursePageTitle">每一课都是一场 AI 探索任务</h1>
+          <p class="section-lead">选择课程后，页面会加载本课交互 PPT、小游戏、Prompt 模板和家庭任务。首页不再承载课堂内容，课堂体验更聚焦，也更容易滑动浏览。</p>
+        </div>
+        <img src="assets/wenwen-planet-avatar.jpg" alt="问问星球 AI 星球向导形象">
+      </div>
+    </section>
+
+    <section class="course-workspace" id="classroom">
+      <div class="course-layout">
+        <aside class="course-rail" id="lessonList" aria-label="课程选择">
+          <div class="rail-head">
+            <strong>16节课程</strong>
+            <span>点一节进入课堂</span>
+          </div>
+          <div class="course-rail-list" id="courseRail"></div>
+        </aside>
+
+        <div class="classroom-shell is-empty" id="classroomShell">
+          <div class="empty-classroom">
+            <img src="assets/wenwen-planet-avatar.jpg" alt="">
+            <h2>选择一节课开始</h2>
+            <p>左侧课程列表会把每节课加载成独立课堂：PPT、小游戏、Prompt 和家庭任务都在这里完成。</p>
+            <button class="btn primary" type="button" data-start-course="1">打开第1课</button>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <script src="script.js?v=scroll-rescue-20260520d"></script>
+</body>
+</html>

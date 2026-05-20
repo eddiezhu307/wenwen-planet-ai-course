@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 520" role="img" aria-labelledby="title desc">
+  <title id="title">Campus AI project demo day scene</title>
+  <desc id="desc">Students present an AI creative project with charts, poster, and stage.</desc>
+  <rect width="720" height="520" rx="32" fill="#f3efff"/>
+  <rect x="70" y="86" width="580" height="328" rx="30" fill="#fff" stroke="#d7d0f4" stroke-width="4"/>
+  <rect x="122" y="128" width="300" height="170" rx="22" fill="#20353b"/>
+  <rect x="148" y="154" width="248" height="118" rx="16" fill="#edf8ff"/>
+  <rect x="174" y="196" width="36" height="48" rx="8" fill="#2e8c7a"/>
+  <rect x="230" y="178" width="36" height="66" rx="8" fill="#f6c95f"/>
+  <rect x="286" y="212" width="36" height="32" rx="8" fill="#e76f3c"/>
+  <path d="M342 230l32-42" stroke="#2b78bd" stroke-width="10" stroke-linecap="round"/>
+  <rect x="468" y="136" width="122" height="166" rx="20" fill="#fff8df" stroke="#edd184" stroke-width="4"/>
+  <path d="M496 186h66M496 224h42M496 262h56" stroke="#2e8c7a" stroke-width="12" stroke-linecap="round"/>
+  <circle cx="260" cy="362" r="46" fill="#ffc49b"/>
+  <path d="M218 354c9-49 78-64 96-12-30 9-56 8-96 12z" fill="#54372f"/>
+  <rect x="206" y="414" width="112" height="76" rx="24" fill="#2b78bd"/>
+  <circle cx="244" cy="366" r="5" fill="#20353b"/>
+  <circle cx="276" cy="366" r="5" fill="#20353b"/>
+  <path d="M246 386c12 9 24 9 36 0" fill="none" stroke="#20353b" stroke-width="5" stroke-linecap="round"/>
+  <circle cx="450" cy="364" r="46" fill="#ffc49b"/>
+  <path d="M408 356c8-48 78-62 96-10-32 8-58 7-96 10z" fill="#684335"/>
+  <rect x="396" y="416" width="112" height="74" rx="24" fill="#e76f3c"/>
+  <circle cx="434" cy="368" r="5" fill="#20353b"/>
+  <circle cx="466" cy="368" r="5" fill="#20353b"/>
+  <path d="M436 388c12 9 24 9 36 0" fill="none" stroke="#20353b" stroke-width="5" stroke-linecap="round"/>
+  <path d="M112 420h500" stroke="#cfc7ee" stroke-width="10" stroke-linecap="round"/>
+</svg>

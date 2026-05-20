@@ -1,0 +1,9 @@
+.DS_Store
+.deploy-vercel/
+.vercel/
+.vercelignore
+deploy-site.tgz
+review-*.png
+review-*.jpg
+*.log
+assets/*.png

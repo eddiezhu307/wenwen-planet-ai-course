@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 520" role="img" aria-labelledby="title desc">
+  <title id="title">Creative campus poster and song scene</title>
+  <desc id="desc">Campus poster, music, and AI creative tools for students.</desc>
+  <rect width="720" height="520" rx="32" fill="#fff6e7"/>
+  <rect x="74" y="78" width="246" height="354" rx="24" fill="#fff" stroke="#edd184" stroke-width="4"/>
+  <rect x="106" y="118" width="182" height="86" rx="18" fill="#d9f0fb"/>
+  <circle cx="144" cy="154" r="22" fill="#f6c95f"/>
+  <path d="M128 188c36-56 84-56 120 0" fill="none" stroke="#e76f3c" stroke-width="10" stroke-linecap="round"/>
+  <rect x="110" y="244" width="176" height="18" rx="9" fill="#2e8c7a"/>
+  <rect x="110" y="286" width="134" height="18" rx="9" fill="#2b78bd"/>
+  <rect x="110" y="328" width="160" height="18" rx="9" fill="#d95f8d"/>
+  <rect x="388" y="116" width="230" height="170" rx="26" fill="#20353b"/>
+  <rect x="418" y="146" width="170" height="110" rx="18" fill="#e8fbf5"/>
+  <path d="M460 226v-62h68v62" fill="none" stroke="#2e8c7a" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="460" cy="230" r="18" fill="#f6c95f"/>
+  <circle cx="526" cy="230" r="18" fill="#f6c95f"/>
+  <path d="M376 354h256" stroke="#f6c95f" stroke-width="18" stroke-linecap="round"/>
+  <path d="M408 394h180" stroke="#e76f3c" stroke-width="18" stroke-linecap="round"/>
+  <circle cx="420" cy="334" r="14" fill="#2b78bd"/>
+  <circle cx="476" cy="334" r="14" fill="#d95f8d"/>
+  <circle cx="532" cy="334" r="14" fill="#2e8c7a"/>
+  <path d="M620 82l28 18-28 18-28-18z" fill="#d95f8d"/>
+  <circle cx="356" cy="86" r="16" fill="#e76f3c"/>
+  <circle cx="656" cy="286" r="12" fill="#f6c95f"/>
+</svg>

@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 520" role="img" aria-labelledby="title desc">
+  <title id="title">Homework helper scene</title>
+  <desc id="desc">A student uses AI prompts to understand homework step by step.</desc>
+  <rect width="720" height="520" rx="32" fill="#e9f8f3"/>
+  <rect x="64" y="72" width="592" height="360" rx="28" fill="#fff" stroke="#cfe2df" stroke-width="4"/>
+  <rect x="104" y="112" width="260" height="246" rx="20" fill="#fff8df" stroke="#ecd27f" stroke-width="4"/>
+  <path d="M138 158h172M138 198h142M138 238h186M138 278h126" stroke="#2b78bd" stroke-width="16" stroke-linecap="round"/>
+  <circle cx="150" cy="325" r="14" fill="#e76f3c"/>
+  <path d="M182 326h120" stroke="#2e8c7a" stroke-width="12" stroke-linecap="round"/>
+  <rect x="400" y="118" width="190" height="170" rx="24" fill="#20353b"/>
+  <rect x="424" y="142" width="142" height="122" rx="16" fill="#dff6f1"/>
+  <circle cx="472" cy="196" r="30" fill="#2e8c7a"/>
+  <circle cx="462" cy="188" r="5" fill="#20353b"/>
+  <circle cx="482" cy="188" r="5" fill="#20353b"/>
+  <path d="M461 208c12 10 25 10 37 0" fill="none" stroke="#20353b" stroke-width="5" stroke-linecap="round"/>
+  <path d="M424 326h166" stroke="#f6c95f" stroke-width="14" stroke-linecap="round"/>
+  <path d="M424 362h122" stroke="#e76f3c" stroke-width="14" stroke-linecap="round"/>
+  <circle cx="454" cy="422" r="42" fill="#ffc49b"/>
+  <path d="M414 416c8-45 70-60 86-14-30 9-52 6-86 14z" fill="#593a2f"/>
+  <rect x="406" y="458" width="96" height="58" rx="22" fill="#2b78bd"/>
+  <circle cx="440" cy="424" r="5" fill="#20353b"/>
+  <circle cx="470" cy="424" r="5" fill="#20353b"/>
+  <path d="M442 442c10 8 22 8 32 0" fill="none" stroke="#20353b" stroke-width="5" stroke-linecap="round"/>
+  <path d="M552 418l34-34 34 34" fill="none" stroke="#2e8c7a" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
