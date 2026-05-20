@@ -19,18 +19,17 @@
 
 html,
 body {
-  height: 100% !important;
+  height: auto !important;
   min-height: 100% !important;
   overflow-x: hidden !important;
-  overflow-y: hidden !important;
+  overflow-y: auto !important;
   overscroll-behavior-y: auto;
   touch-action: pan-y;
 }
 
 body {
-  display: flex;
-  min-height: 100dvh !important;
-  flex-direction: column;
+  display: block;
+  min-height: 100% !important;
   background:
     linear-gradient(90deg, rgba(0, 87, 255, 0.08) 1px, transparent 1px),
     linear-gradient(180deg, rgba(255, 90, 42, 0.08) 1px, transparent 1px),
@@ -49,7 +48,6 @@ section {
 }
 
 .site-header {
-  flex: 0 0 auto;
   border-bottom: 2px solid rgba(20, 32, 63, 0.1);
   background: rgba(255, 250, 240, 0.88);
   backdrop-filter: blur(18px);
@@ -58,15 +56,15 @@ section {
 main,
 body > main#main,
 body > main.course-main {
-  flex: 1 1 auto;
-  height: calc(100dvh - 76px);
-  min-height: 0;
-  overflow: hidden auto !important;
+  display: block;
+  height: auto !important;
+  min-height: auto;
+  overflow: visible !important;
   overflow-x: hidden !important;
-  overflow-y: auto !important;
-  overscroll-behavior-y: contain;
+  overflow-y: visible !important;
+  overscroll-behavior-y: auto;
   scroll-behavior: smooth;
-  -webkit-overflow-scrolling: touch;
+  -webkit-overflow-scrolling: auto;
 }
 
 .brand {
@@ -352,6 +350,30 @@ body > main.course-main {
 }
 
 @media (max-width: 760px) {
+  html,
+  body {
+    height: auto !important;
+    min-height: 100% !important;
+    overflow-x: hidden !important;
+    overflow-y: auto !important;
+  }
+
+  body {
+    display: block;
+    min-height: 100% !important;
+  }
+
+  main,
+  body > main#main,
+  body > main.course-main {
+    display: block;
+    height: auto !important;
+    min-height: auto;
+    overflow: visible !important;
+    overscroll-behavior-y: auto;
+    -webkit-overflow-scrolling: auto;
+  }
+
   .hero-slide::after {
     background:
       linear-gradient(0deg, rgba(255, 247, 207, 0.98) 0%, rgba(255, 247, 207, 0.9) 54%, rgba(255, 247, 207, 0.18) 100%);

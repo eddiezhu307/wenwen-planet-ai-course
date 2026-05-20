@@ -574,8 +574,6 @@ function setupScrollRescue() {
   let lastTouchY = 0;
 
   function getPageScrollRoot() {
-    const main = document.querySelector("main");
-    if (main && main.scrollHeight > main.clientHeight + 1) return main;
     return document.scrollingElement || document.documentElement;
   }
 
@@ -612,13 +610,7 @@ function setupScrollRescue() {
     if (!location.hash || location.hash.startsWith("#lesson-")) return;
     const id = decodeURIComponent(location.hash.slice(1));
     const target = document.getElementById(id);
-    const main = document.querySelector("main");
     if (!target) return;
-    if (main && main.scrollHeight > main.clientHeight + 1) {
-      const top = target.getBoundingClientRect().top - main.getBoundingClientRect().top + main.scrollTop - 12;
-      main.scrollTop = Math.max(0, top);
-      return;
-    }
     target.scrollIntoView({ block: "start" });
   }
 
