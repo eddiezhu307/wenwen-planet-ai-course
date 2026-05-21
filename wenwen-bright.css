@@ -63,7 +63,7 @@ body > main.course-main {
   overflow-x: hidden !important;
   overflow-y: visible !important;
   overscroll-behavior-y: auto;
-  scroll-behavior: smooth;
+  scroll-behavior: auto;
   -webkit-overflow-scrolling: auto;
 }
 

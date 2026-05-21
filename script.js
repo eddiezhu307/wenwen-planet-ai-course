@@ -559,53 +559,7 @@ const progressBar = document.querySelector("#progressBar");
 const courseRail = document.querySelector("#courseRail");
 const toast = document.querySelector("#toast");
 
-function setupScrollRescue() {
-  const scrollableSelector = [
-    ".course-rail",
-    ".match-grid",
-    ".side-stack",
-    ".ppt-stage",
-    ".game-panel",
-    ".prompt-card",
-    ".worksheet-card",
-    "textarea",
-    "select"
-  ].join(",");
-  let lastTouchY = 0;
-
-  function getPageScrollRoot() {
-    return document.scrollingElement || document.documentElement;
-  }
-
-  function canScrollInside(target, deltaY) {
-    const element = target instanceof Element ? target.closest(scrollableSelector) : null;
-    if (!element || element === document.body || element === document.documentElement) return false;
-    const style = window.getComputedStyle(element);
-    if (!/(auto|scroll)/.test(style.overflowY)) return false;
-    const maxScroll = element.scrollHeight - element.clientHeight;
-    if (maxScroll <= 1) return false;
-    return deltaY < 0 ? element.scrollTop > 1 : element.scrollTop < maxScroll - 1;
-  }
-
-  function scrollPage(deltaY) {
-    if (!deltaY) return false;
-    const root = getPageScrollRoot();
-    const viewportHeight = root === document.body || root === document.documentElement
-      ? window.innerHeight
-      : root.clientHeight;
-    const maxScroll = root.scrollHeight - viewportHeight;
-    if (maxScroll <= 0) return false;
-    const current = root.scrollTop || 0;
-    const next = Math.max(0, Math.min(maxScroll, current + deltaY));
-    if (Math.abs(next - current) < 0.5) return false;
-    root.scrollTop = next;
-    if (root === document.body || root === document.documentElement) {
-      document.documentElement.scrollTop = next;
-      document.body.scrollTop = next;
-    }
-    return true;
-  }
-
+function setupHashNavigation() {
   function scrollHashTarget() {
     if (!location.hash || location.hash.startsWith("#lesson-")) return;
     const id = decodeURIComponent(location.hash.slice(1));
@@ -613,52 +567,6 @@ function setupScrollRescue() {
     if (!target) return;
     target.scrollIntoView({ block: "start" });
   }
-
-  window.addEventListener("wheel", (event) => {
-    if (event.ctrlKey || canScrollInside(event.target, event.deltaY)) return;
-    if (scrollPage(event.deltaY)) event.preventDefault();
-  }, { passive: false, capture: true });
-
-  window.addEventListener("touchstart", (event) => {
-    lastTouchY = event.touches[0]?.clientY || 0;
-  }, { passive: true });
-
-  window.addEventListener("touchmove", (event) => {
-    const currentY = event.touches[0]?.clientY || 0;
-    const deltaY = lastTouchY - currentY;
-    if (Math.abs(deltaY) < 2 || canScrollInside(event.target, deltaY)) return;
-    if (scrollPage(deltaY)) {
-      event.preventDefault();
-      lastTouchY = currentY;
-    }
-  }, { passive: false, capture: true });
-
-  window.addEventListener("keydown", (event) => {
-    const target = event.target;
-    if (target instanceof Element && target.matches("input, textarea, select, button")) return;
-    const root = getPageScrollRoot();
-    const step = Math.max(120, Math.round(root.clientHeight * 0.82));
-    const keyScrollMap = {
-      ArrowDown: 90,
-      ArrowUp: -90,
-      PageDown: step,
-      PageUp: -step,
-      " ": step
-    };
-    if (event.key === "Home") {
-      root.scrollTop = 0;
-      event.preventDefault();
-      return;
-    }
-    if (event.key === "End") {
-      root.scrollTop = root.scrollHeight;
-      event.preventDefault();
-      return;
-    }
-    if (Object.prototype.hasOwnProperty.call(keyScrollMap, event.key) && scrollPage(keyScrollMap[event.key])) {
-      event.preventDefault();
-    }
-  }, { capture: true });
 
   window.addEventListener("hashchange", () => window.setTimeout(scrollHashTarget, 0));
   window.setTimeout(scrollHashTarget, 80);
@@ -1257,7 +1165,7 @@ function bootFromHash() {
 }
 
 setupHero();
-setupScrollRescue();
+setupHashNavigation();
 renderCourses();
 renderCourseRail();
 updateProgress();
